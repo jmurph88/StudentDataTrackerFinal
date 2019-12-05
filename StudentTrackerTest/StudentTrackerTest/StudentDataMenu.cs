@@ -28,7 +28,6 @@ namespace StudentTrackerTest
 
             choice = Console.ReadKey().KeyChar.ToString().ToUpper();
             Console.WriteLine(" ");
-            Console.WriteLine("»»»» " + choice + " ««««");
             return choice[0];
         }
     }

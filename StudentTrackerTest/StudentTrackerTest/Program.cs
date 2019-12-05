@@ -235,9 +235,9 @@ namespace StudentTrackerTest
             Console.WriteLine("");
             Console.WriteLine("Enter the last name of the student you wish to delete:");
             string deleteInput = Console.ReadLine();
-            Console.WriteLine("You are deleting " + deleteInput + ". Is this correct? [Y]es or [N]o");
+            Console.WriteLine("You are deleting " + deleteInput + ". Is this correct? [Y]es");
             char answerInput = Console.ReadKey().KeyChar;
-            if (answerInput == 'Y')
+            if (answerInput == 'Y' || answerInput == 'y')
             {
                 foreach (StudentData deleteResult in StudentDataList.ToList().Where(s => s.LName.Contains(deleteInput)))
                 {
@@ -247,10 +247,6 @@ namespace StudentTrackerTest
                 Console.WriteLine(" ");
                 Console.WriteLine("You have succesfully deleted a student.");
 
-            }
-            else if (answerInput == 'N')
-            {
-                StudentDataFunc.DisplayMenu();
             }
         }
 
@@ -316,7 +312,6 @@ namespace StudentTrackerTest
             {
                 Console.WriteLine("The letter you have entered is not valid.");
             }
-
         }
 
     }
