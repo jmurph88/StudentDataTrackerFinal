@@ -255,6 +255,8 @@ namespace StudentTrackerTest
         }
 
         //Edits student's quiz scores - allows user to pick which score to edit and replaces old score with new score
+        //(Things to Improve: - needs to be able to edit student name and teacher name 
+                           //- return to quiz selection menu or main menu option)
         public static void StudentUpdate()
         {
             char quizName;
@@ -273,7 +275,7 @@ namespace StudentTrackerTest
                 int nQuiz1 = Convert.ToInt32(Console.ReadLine());
                 StudentDataList.Where(s => s.LName.Contains(editInput)).ToList().ForEach(i => i.Quiz1 = nQuiz1);
 
-                Console.WriteLine("The student's quiz scores have been updated.");
+                Console.WriteLine("The student's quiz score has been updated.");
                 Console.WriteLine(" "); //Creates empty line before menu displays again to improve readability 
             }
 
@@ -284,7 +286,7 @@ namespace StudentTrackerTest
                 int nQuiz2 = Convert.ToInt32(Console.ReadLine());
                 StudentDataList.Where(s => s.LName.Contains(editInput)).ToList().ForEach(i => i.Quiz2 = nQuiz2);
 
-                Console.WriteLine("The student's quiz scores have been updated.");
+                Console.WriteLine("The student's quiz score has been updated.");
                 Console.WriteLine(" ");
             }
 
@@ -295,7 +297,7 @@ namespace StudentTrackerTest
                 int nQuiz3 = Convert.ToInt32(Console.ReadLine());
                 StudentDataList.Where(s => s.LName.Contains(editInput)).ToList().ForEach(i => i.Quiz3 = nQuiz3);
 
-                Console.WriteLine("The student's quiz scores have been updated.");
+                Console.WriteLine("The student's quiz score has been updated..");
                 Console.WriteLine(" ");
             }
 
@@ -306,13 +308,13 @@ namespace StudentTrackerTest
                 int nQuiz4 = Convert.ToInt32(Console.ReadLine());
                 StudentDataList.Where(s => s.LName.Contains(editInput)).ToList().ForEach(i => i.Quiz4 = nQuiz4);
 
-                Console.WriteLine("The student's quiz scores have been updated.");
+                Console.WriteLine("The student's quiz score has been updated.");
                 Console.WriteLine(" ");
             }
             //Catches input that is incorret
-            else if (quizName < 1 || quizName > 4)
+            else if (quizName != 'A' || quizName != 'B' || quizName != 'C' || quizName != 'D')
             {
-                Console.WriteLine("The number you have entered is not valid.");
+                Console.WriteLine("The letter you have entered is not valid.");
             }
 
         }
